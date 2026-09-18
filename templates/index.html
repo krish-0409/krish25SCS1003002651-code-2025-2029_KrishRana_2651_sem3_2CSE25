@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Image Recognition</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+  <div class="app">
+    <header class="app-header">
+      <h1>🔍 AI Image Recognition</h1>
+      <p>Upload an image and let a deep learning model tell you what's in it.</p>
+    </header>
+
+    <main class="card">
+
+      <!-- Upload / Drop Zone -->
+      <div id="dropZone" class="drop-zone">
+        <input type="file" id="fileInput" accept="image/*" hidden />
+        <div id="dropZoneContent">
+          <div class="upload-icon">⬆️</div>
+          <p><strong>Click to upload</strong> or drag & drop an image</p>
+          <p class="hint">PNG, JPG, JPEG, BMP or WEBP — up to 8 MB</p>
+        </div>
+        <img id="previewImg" class="preview-img" hidden />
+      </div>
+
+      <div class="actions">
+        <button id="predictBtn" class="btn btn-primary" disabled>Classify Image</button>
+        <button id="resetBtn" class="btn btn-secondary" hidden>Try Another Image</button>
+      </div>
+
+      <!-- Loading Spinner -->
+      <div id="loading" class="loading" hidden>
+        <div class="spinner"></div>
+        <p>Analyzing image...</p>
+      </div>
+
+      <!-- Error Message -->
+      <div id="errorBox" class="error-box" hidden></div>
+
+      <!-- Results -->
+      <div id="results" class="results" hidden>
+        <h2>Prediction Results</h2>
+
+        <div class="top-result">
+          <div class="top-label" id="topLabel">—</div>
+          <div class="confidence-bar-wrap">
+            <div class="confidence-bar" id="topConfidenceBar"></div>
+          </div>
+          <div class="top-confidence" id="topConfidenceText">—</div>
+        </div>
+
+        <h3>Other Possibilities</h3>
+        <ul id="otherResults" class="other-results"></ul>
+      </div>
+
+    </main>
+
+    <footer class="app-footer">
+      <p>Powered by Python · TensorFlow/Keras (MobileNetV2) · OpenCV · Flask</p>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
