@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI Image Recognition System
 
 A Flask web application that classifies uploaded images using a pretrained
@@ -93,3 +94,6 @@ of the box with no training step. To swap in your own trained model
 - Set `debug=False` in `app.py` before deploying to production, and serve
   with a production WSGI server (e.g. `gunicorn app:app`) rather than the
   Flask dev server.
+=======
+# krish25SCS1003002651-code-2025-2029_KrishRana_2651_sem3_2CSE25
+>>>>>>> f6e2a997059e4a7fde536889d27565dbf6138651
